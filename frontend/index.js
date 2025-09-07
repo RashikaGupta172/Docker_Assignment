@@ -19,7 +19,7 @@ app.post("/submit", async (req, res) => {
   const { name, email, password } = req.body;
 
   try {
-    const response = await fetch("http://localhost:5000/submit", {
+    const response = await fetch("http://172.208.64.230:5000/submit", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, password }),
@@ -35,5 +35,6 @@ app.post("/submit", async (req, res) => {
 app.listen(3000, () => {
   console.log("Frontend running on port 3000");
 });
+
 
 
