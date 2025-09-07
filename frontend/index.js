@@ -10,6 +10,10 @@ app.use(bodyParser.json());
 // Serve static files (like HTML, CSS, JS) from public folder
 app.use(express.static(path.join(__dirname, "public")));
 
+app.get("/", (req, res) => {
+  res.send("Hello from Express frontend!");
+});
+
 // Route to handle form submission
 app.post("/submit", async (req, res) => {
   const { name, email, password } = req.body;
@@ -31,3 +35,4 @@ app.post("/submit", async (req, res) => {
 app.listen(3000, () => {
   console.log("Frontend running on port 3000");
 });
+
